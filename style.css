@@ -1,0 +1,428 @@
+/* ================================
+   Root Variables & Global Reset
+   ================================ */
+   :root {
+    --spacing: 1rem;                      /* Base spacing: 16px */
+    --grid-columns: 12;                   /* 12-column grid */
+    --gap: calc(var(--spacing) * 2);      /* Gutter en Hero aumentado */
+    --radius: 8px;                        /* Rounded corners */
+    --shadow: rgba(0,0,0,0.1) 0px 2px 8px; /* Light box-shadow */
+  
+    --color-primary:   #1BA39C;           /* Ñango green */
+    --color-primary-dark: #0D8F7E;        /* Darker green for hover */
+    --color-accent:    #03C9A9;           /* Accent green */
+    --color-text:      #0B3A34;           /* Dark text */
+    --color-bg:        #FFFFFF;           /* Section background */
+    --color-muted:     #F5F5F5;           /* Footer / muted background */
+  
+    /* Nuevos colores */
+    --color-highlight: #77e5a4;           /* para "ahorra el día" */
+    --color-secondary-btn: #fbf8e9;       /* fondo segundo botón */
+    --color-secondary-hover: #f0ecd8;     /* hover secundario */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    padding-top: 80px;  
+    scroll-behavior: smooth;
+  }
+  
+  /* ================================
+     Utility Containers & Sections
+     ================================ */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: var(--gap);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+  }
+  
+  .section {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    background: var(--color-bg);
+    padding: var(--spacing) 0;
+  }
+  
+  html, body {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+  }
+  
+  /* ================================
+     Header & Navigation
+     ================================ */
+  .header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--spacing) 2rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem; font-weight: bold; color: #fff;
+  }
+  
+  .nav-links {
+    list-style: none; display: flex; gap: var(--spacing);
+  }
+  
+  .nav-links a {
+    color: #fff; text-decoration: none; font-weight: 500;
+  }
+  
+  .lang-switch button {
+    background: none; border: none; color: #fff;
+    margin-left: 0.5rem; cursor: pointer; font-weight: 600;
+  }
+  
+  /* ================================
+     Hero Section
+     ================================ */
+     .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;           /* filas se dimensionan al contenido */ 
+      grid-auto-rows: auto;               /* filas implícitas también auto */ 
+      column-gap: var(--gap);             /* solo separación horizontal */
+      row-gap: var(--spacing);            /* separación vertical ligera */
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+    }
+  #hero.section {
+    min-height: auto;             
+    padding: calc(var(--spacing) * 6) 0;
+  }
+  .hero-text {
+    grid-column: 1/2;
+    text-align: left;
+  }
+  
+  .hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing);
+  }
+  
+  .hero-title-main {
+    color: var(--color-text);
+  }
+  
+  .hero-title-highlight {
+    color: var(--color-highlight);
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: calc(var(--spacing) * 1.5);
+  }
+  
+  .hero-buttons .btn {
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    margin-right: var(--spacing);
+  }
+  
+  .btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  .btn-secondary {
+    background: var(--color-secondary-btn);
+    color: var(--color-text);
+    border: none;  /* sin borde */
+  }
+  
+  .btn-secondary:hover {
+    background: var(--color-secondary-hover);
+  }
+  
+  /* Imagen más grande, sin sombra ni bordes */
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: none;                   
+    max-height: none;                   
+    object-fit: contain;                
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 600px;  /* ampliada */
+    border-radius: 0;  /* sin redondeo */
+    box-shadow: none;  /* sin sombra */
+  }
+  
+/* ================================
+   Sección Cómo Funciona (How It Works)
+   ================================ */
+   .how-it-works {
+    /* Quitar altura 100vh y ajustar padding */
+    min-height: auto;
+    padding: calc(var(--spacing) * 3) 0;
+    background: var(--color-bg);
+  }
+  
+  /* Título centrado */
+  .how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  
+  /* Contenedor: imagen a la izquierda, pasos a la derecha */
+  .how-it-works-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+  }
+  
+  /* Imagen izquierda */
+  .how-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Cada paso sin línea, solo círculos grandes */
+  .step {
+    position: relative;
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  
+  /* Círculo exterior + interior, más grande */
+  .step .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;            /* diámetro exterior */
+    height: 60px;
+    background: #e1f7e6;    /* color exterior suave */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Círculo interior */
+  .step .circle span {
+    display: block;
+    width: 36px;            /* diámetro interior */
+    height: 36px;
+    background: #92e3a9;    /* color interior oscuro */
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 36px;
+  }
+  
+  /* Contenido del paso */
+  .step-content {
+    margin-left: calc(var(--spacing) * 8); /* deja espacio para el círculo */
+  }
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--color-text);
+  }
+  .step-content p {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+  
+  /* ================================
+     Responsive: móvil y tablet
+     ================================ */
+  @media (max-width: 1024px) {
+    .how-it-works-container {
+      grid-template-columns: 1fr;  /* apilar en una columna */
+    }
+  }
+  
+
+  
+
+  /* ================================
+     About Us (2-column grid)
+     ================================ */
+  .about-us .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+    align-items: center;
+  }
+  
+  .about-us img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  /* ================================
+     Features (4-column grid)
+     ================================ */
+  .features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    width: 100%;
+  }
+  
+  .features .feature {
+    background: var(--color-bg);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  
+  /* ================================
+     Pricing Plans
+     ================================ */
+  .plans .plan-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap);
+    width: 100%;
+  }
+  
+  .plan-card {
+    background: var(--color-bg);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; justify-content: space-between;
+    border: 2px solid var(--color-accent);
+  }
+  
+  .plan-plus {
+    border-color: var(--color-primary);
+  }
+  
+  .plan-card .price {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin: var(--spacing) 0;
+  }
+  
+  .plan-card ul {
+    list-style: disc inside;
+    text-align: left;
+    margin-bottom: var(--spacing);
+  }
+  
+  /* ================================
+     FAQ Section
+     ================================ */
+  .faq .faq-item {
+    width: 100%; max-width: 800px;
+    padding: var(--spacing);
+    border-bottom: 1px solid var(--color-muted);
+  }
+  
+  .faq .faq-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* ================================
+     Global Buttons
+     ================================ */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* ================================
+     Footer
+     ================================ */
+  .footer {
+    background: var(--color-muted);
+    text-align: center;
+    padding: var(--spacing) 0;
+  }
+  
+  /* ================================
+     Responsive Breakpoints
+     ================================ */
+  @media (max-width: 1024px) {
+    .how-it-works .steps,
+    .features .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .about-us .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: var(--spacing);
+    }
+    .hero-image img {
+      max-width: 80%;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+    }
+    .how-it-works .steps,
+    .features .feature-grid,
+    .plans .plan-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
