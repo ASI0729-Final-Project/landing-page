@@ -321,6 +321,46 @@
   line-height: 1.6;
   color: var(--color-text);
 }
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.about-card {
+  background: var(--color-bg);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.about-card p {
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: contain;
+}
 /* ================================
    Features (Responsive & Styled)
    ================================ */
