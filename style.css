@@ -9,12 +9,13 @@
     --shadow: rgba(0,0,0,0.1) 0px 2px 8px; /* Light box-shadow */
   
     --color-primary:   #1BA39C;           /* Ñango green */
-    --color-primary-dark: #0D8F7E;        /* Darker green for hover */
+    --color-primary-dark: #0F2C32;        /* Darker green for hover */
     --color-accent:    #03C9A9;           /* Accent green */
-    --color-text:      #0B3A34;           /* Dark text */
+    --color-text:      #0B3A34;  
+    --color-text2:      #FFFFFF;    /* Dark text */
     --color-bg:        #FFFFFF;           /* Section background */
-    --color-muted:     #F5F5F5;           /* Footer / muted background */
-  
+    --color-muted:     #F5F5F5;   
+    --color-bg2:       #0f2c325d;           /* Light background for sections */
     /* Nuevos colores */
     --color-highlight: #77e5a4;           /* para "ahorra el día" */
     --color-secondary-btn: #fbf8e9;       /* fondo segundo botón */
@@ -324,128 +325,162 @@
 /* ================================
    Features (Responsive & Styled)
    ================================ */
-   .features {
-    padding: calc(var(--spacing) * 4) 0;
-    background-color: var(--color-muted); /* fondo suave para contraste */
+  .features {
+   padding: calc(var(--spacing) * 4) 0;
+   background-color: var(--color-bg); /* fondo suave para contraste */
   }
   
   .features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: calc(var(--spacing) * 2);
-    color: var(--color-text);
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: calc(var(--spacing) * 2);
+   color: var(--color-text);
   }
   
   .features .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--gap);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing);
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: var(--gap);
   }
   
   .features .feature {
-    background: var(--color-bg);
-    padding: calc(var(--spacing) * 2);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing);
+   background: var(--color-bg); /* Fondo cambiado */
+   padding: calc(var(--spacing) * 2);
+   border-radius: var(--radius);
+   box-shadow: var(--shadow);
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; /* Alinea el contenido verticalmente al centro */
+   gap: var(--spacing);
+   height: 100%; /* Asegura que las cards sean más largas */
+   margin: 12%;
   }
   
   .features .feature:hover {
     transform: translateY(-6px);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 16px;
+    
   }
+
+  
   
   .features .feature-icon {
-    font-size: 2.5rem;
-    color: var(--color-primary);
+    font-size: 3rem;
+    color: var(--color-primary-dark); /* Texto cambiado */
   }
-  
+
   .features .feature-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-text);
+     /* Texto cambiado */
   }
   
   .features .feature-description {
     font-size: 1rem;
-    color: var(--color-text);
+     /* Texto cambiado a blanco */
     line-height: 1.6;
   }
-  
   /* ================================
      Pricing Plans
      ================================ */
+  .plans {
+    background: var(--color-primary-dark);
+    padding: calc(var(--spacing) * 4) 0;
+  }
+
   .plans .plan-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 cards */
     gap: var(--gap);
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  
+
   .plan-card {
     background: var(--color-bg);
-    padding: var(--spacing);
+    padding: calc(var(--spacing) * 3); /* Increased padding for larger cards */
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    display: flex; flex-direction: column; justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     border: 2px solid var(--color-accent);
+    height: 100%; /* Ensure cards stretch */
   }
-  
+
   .plan-plus {
     border-color: var(--color-primary);
   }
-  
+
+  .plans h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
+    color: var(--color-text2);
+  }
+
   .plan-card .price {
     font-size: 1.4rem;
     color: var(--color-primary);
     margin: var(--spacing) 0;
+    text-align: center; /* Center price text */
   }
-  
+
   .plan-card ul {
     list-style: disc inside;
-    text-align: left;
+    text-align: left; /* Center list items */
     margin-bottom: var(--spacing);
   }
-  
 /* ================================
-   FAQ 
-   ================================ */
-   .faq {
+  /* ================================
+    BEÑANGO
+    ================================ */
+  .beñango {
     background: var(--color-bg);
     padding: calc(var(--spacing) * 4) var(--spacing);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .faq h2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grid de dos columnas */
+    gap: var(--gap); /* Espaciado entre contenedores */
+    align-items: center; /* Alinear elementos al centro */
+    justify-items: center; /* Centrar elementos horizontalmente */
+    }
+
+    .beñango h2 {
+    grid-column: 1 / -1; /* Título ocupa ambas columnas */
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: calc(var(--spacing) * 2);
-    color: var(--color-text);
-  }
-  
-  .faq .faq-item {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: var(--spacing);
-    border: 1px solid var(--color-muted);
+    color: var(--color-primary-dark);
+    }
+
+    .beñango .beñango-item {
+    background: var(--color-muted); /* Fondo gris */
     border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-  }
-  
-  .faq-item summary {
+    box-shadow: var(--shadow); /* Sombra */
+    padding: calc(var(--spacing) * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    justify-content: center; /* Centrar contenido verticalmente */
+    text-align: center; /* Alineación centrada */
+    }
+
+    .beñango-item input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: var(--spacing);
+    border: 2px solid var(--color-primary); /* Bordeado */
+    border-radius: var(--radius); /* Bordes redondeados */
+    background: #fff; /* Fondo blanco */
+    box-shadow: var(--shadow); /* Sombra ligera */
+    }
+
+    .beñango-item summary {
     cursor: pointer;
     font-weight: 600;
     font-size: 1.1rem;
@@ -456,24 +491,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .faq-item summary::marker,
-  .faq-item summary::-webkit-details-marker {
+    }
+
+    .beñango-item summary::marker,
+    .beñango-item summary::-webkit-details-marker {
     display: none;
-  }
-  
-  .faq-item[open] summary {
+    }
+
+    .beñango-item[open] summary {
     background: var(--color-secondary-hover);
-  }
-  
-  .faq-item p {
+    }
+
+    .beñango-item p {
     padding: 1rem;
     background: var(--color-bg);
     color: var(--color-text);
     border-top: 1px solid var(--color-muted);
     margin: 0;
     line-height: 1.6;
+    }
   }
   
   
@@ -531,9 +567,15 @@
      Footer
      ================================ */
   .footer {
-    background: var(--color-muted);
+    background: var(--color-primary-dark);
     text-align: center;
     padding: var(--spacing) 0;
+  }
+
+  .footer p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: var(--spacing) 0;
   }
   
   /* ================================

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ñango - Shared Campus Rides</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script defer src="translations.js"></script>
   <script defer src="i18n.js"></script>
 </head>
@@ -20,7 +21,7 @@
         <li><a href="#about" data-i18n="nav.about"></a></li>
         <li><a href="#features" data-i18n="nav.features"></a></li>
         <li><a href="#plans" data-i18n="nav.plans"></a></li>
-        <li><a href="#faq" data-i18n="nav.faq"></a></li>
+        <li><a href="#beñango" data-i18n="nav.beñango"></a></li>
       </ul>
       <div class="lang-switch">
         <button id="btn-es">ES</button>
@@ -110,20 +111,19 @@
     <h2 data-i18n="nav.features"></h2>
     <div class="feature-grid">
       <div class="feature">
+        <i class="fas fa-car-side feature-icon"></i>
         <h3 data-i18n="features.1.title"></h3>
         <p data-i18n="features.1.desc"></p>
       </div>
       <div class="feature">
+        <i class="fas fa-users feature-icon"></i>
         <h3 data-i18n="features.2.title"></h3>
         <p data-i18n="features.2.desc"></p>
       </div>
       <div class="feature">
+        <i class="fas fa-leaf feature-icon"></i>
         <h3 data-i18n="features.3.title"></h3>
         <p data-i18n="features.3.desc"></p>
-      </div>
-      <div class="feature">
-        <h3 data-i18n="features.4.title"></h3>
-        <p data-i18n="features.4.desc"></p>
       </div>
     </div>
   </section>
@@ -149,27 +149,52 @@
           <li data-i18n="plans.plus.benefits.0"></li>
           <li data-i18n="plans.plus.benefits.1"></li>
           <li data-i18n="plans.plus.benefits.2"></li>
-          <li data-i18n="plans.plus.benefits.3"></li>
         </ul>
-        <button class="btn btn-secondary" data-i18n="plans.ctaPlus"></button>
+        <button class="btn btn-primary" data-i18n="plans.ctaPlus"></button>
+      </div>
+      <div class="plan-card plan-premium">
+        <h3 data-i18n="plans.premium.name"></h3>
+        <p class="price" data-i18n="plans.premium.price"></p>
+        <ul>
+          <li data-i18n="plans.premium.benefits.0"></li>
+          <li data-i18n="plans.premium.benefits.1"></li>
+          <li data-i18n="plans.premium.benefits.2"></li>
+        </ul>
+        <button class="btn btn-primary" data-i18n="plans.ctaPlus"></button>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section faq">
-    <h2 data-i18n="nav.faq"></h2>
-    <div class="faq-item">
-      <h4 data-i18n="faq.1.q"></h4>
-      <p data-i18n="faq.1.a"></p>
-    </div>
-    <div class="faq-item">
-      <h4 data-i18n="faq.2.q"></h4>
-      <p data-i18n="faq.2.a"></p>
-    </div>
-    <div class="faq-item">
-      <h4 data-i18n="faq.3.q"></h4>
-      <p data-i18n="faq.3.a"></p>
+  <section id="beñango" class="section beñango">
+    <div class="container beñango-container">
+      <div class="beñango-text"></div>
+        <h2 data-i18n="nav.beñango"></h2>
+        <p data-i18n="beñango.description"></p>
+      </div>
+      <div class="beñango-form-card">
+        <div class="card">
+          <h3 data-i18n="beñango.form.title">Regístrate</h3>
+          <div class="form-group">
+              <label for="first-name" data-i18n="beñango.form.firstName"></label>
+              <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+            <label for="last-name" data-i18n="beñango.form.lastName"></label>
+              <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="beñango.form.email"></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="password" data-i18n="beñango.form.password"></label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="beñango.form.submit"></button>
+          
+        </div>
+      </div>
     </div>
   </section>
 
