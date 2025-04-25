@@ -275,10 +275,6 @@
       grid-template-columns: 1fr;  /* apilar en una columna */
     }
   }
-  
-
-  
-
   /* ================================
      About Us (2-column grid)
      ================================ */
@@ -293,23 +289,96 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
-  
   /* ================================
-     Features (4-column grid)
-     ================================ */
+   About Us (Nosotros)
+   ================================ */
+.about-us {
+  padding: calc(var(--spacing) * 4) 0;
+  background: var(--color-muted);
+}
+
+.about-us h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.about-us-text h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-us-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+/* ================================
+   Features (Responsive & Styled)
+   ================================ */
+   .features {
+    padding: calc(var(--spacing) * 4) 0;
+    background-color: var(--color-muted); /* fondo suave para contraste */
+  }
+  
+  .features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
+    color: var(--color-text);
+  }
+  
   .features .feature-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--gap);
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
   }
   
   .features .feature {
     background: var(--color-bg);
-    padding: var(--spacing);
+    padding: calc(var(--spacing) * 2);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+  }
+  
+  .features .feature:hover {
+    transform: translateY(-6px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 16px;
+  }
+  
+  .features .feature-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+  }
+  
+  .features .feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  
+  .features .feature-description {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.6;
   }
   
   /* ================================
@@ -347,18 +416,66 @@
     margin-bottom: var(--spacing);
   }
   
-  /* ================================
-     FAQ Section
-     ================================ */
-  .faq .faq-item {
-    width: 100%; max-width: 800px;
-    padding: var(--spacing);
-    border-bottom: 1px solid var(--color-muted);
+/* ================================
+   FAQ 
+   ================================ */
+   .faq {
+    background: var(--color-bg);
+    padding: calc(var(--spacing) * 4) var(--spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .faq .faq-item:last-child {
-    border-bottom: none;
+  .faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
+    color: var(--color-text);
   }
+  
+  .faq .faq-item {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: var(--spacing);
+    border: 1px solid var(--color-muted);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: var(--color-secondary-btn);
+    color: var(--color-text);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-item summary::marker,
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faq-item[open] summary {
+    background: var(--color-secondary-hover);
+  }
+  
+  .faq-item p {
+    padding: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    border-top: 1px solid var(--color-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+  
   
   /* ================================
      Global Buttons
@@ -372,7 +489,44 @@
     cursor: pointer;
     text-align: center;
   }
-  
+  /* ================================
+   Social Buttons
+   ================================ */
+.social-floating-buttons {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 9999;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.social-btn.fb {
+  background-color: #3b5998;
+}
+
+.social-btn.tw {
+  background-color: #1da1f2;
+}
   /* ================================
      Footer
      ================================ */
