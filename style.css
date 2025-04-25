@@ -437,79 +437,102 @@
     margin-bottom: var(--spacing);
   }
 /* ================================
-  /* ================================
-    BEÑANGO
-    ================================ */
+   BEÑANGO
+   ================================ */
   .beñango {
+   background: var(--color-bg);
+   padding: calc(var(--spacing) * 4) var(--spacing);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+
+  .beñango-card {
     background: var(--color-bg);
-    padding: calc(var(--spacing) * 4) var(--spacing);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Grid de dos columnas */
-    gap: var(--gap); /* Espaciado entre contenedores */
-    align-items: center; /* Alinear elementos al centro */
-    justify-items: center; /* Centrar elementos horizontalmente */
-    }
-
-    .beñango h2 {
-    grid-column: 1 / -1; /* Título ocupa ambas columnas */
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: calc(var(--spacing) * 2);
-    color: var(--color-primary-dark);
-    }
-
-    .beñango .beñango-item {
-    background: var(--color-muted); /* Fondo gris */
+    padding: calc(var(--spacing) * 3); /* Increased padding for larger cards */
     border-radius: var(--radius);
-    box-shadow: var(--shadow); /* Sombra */
-    padding: calc(var(--spacing) * 2);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido */
-    justify-content: center; /* Centrar contenido verticalmente */
-    text-align: center; /* Alineación centrada */
-    }
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border: 2px solid var(--color-accent);
+    height: 100%; /* Ensure cards stretch */
+    margin: 5%;
+  }
+  
+  .beñango h2 {
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: calc(var(--spacing) * 2);
+   color: var(--color-primary-dark);
+  }
+  
+  .beñango .beñango-item {
+   width: 100%;
+   max-width: 800px;
+   margin-bottom: var(--spacing);
+   background: #fff; /* Fondo blanco */
+   border-radius: var(--radius);
+   box-shadow: var(--shadow); /* Sombra */
+   padding: calc(var(--spacing) * 2);
+   display: flex;
+   flex-direction: column;
+   align-items: center; /* Centrar contenido */
+   text-align: left; /* Alineación izquierda */
+  }
+  
 
-    .beñango-item input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: var(--spacing);
-    border: 2px solid var(--color-primary); /* Bordeado */
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .beñango .beñango-item input {
+    padding: 8px;
+    border: 2px solid #4CAF50;
     border-radius: var(--radius); /* Bordes redondeados */
     background: #fff; /* Fondo blanco */
-    box-shadow: var(--shadow); /* Sombra ligera */
-    }
+  /* Sombra ligera */
+  }
 
-    .beñango-item summary {
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 1rem;
-    background: var(--color-secondary-btn);
-    color: var(--color-text);
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+  input:focus {
+    outline: none;
+    border-color: #45a049;
+    box-shadow: 0 0 5px #4CAF50;
+}
 
-    .beñango-item summary::marker,
-    .beñango-item summary::-webkit-details-marker {
-    display: none;
-    }
-
-    .beñango-item[open] summary {
-    background: var(--color-secondary-hover);
-    }
-
-    .beñango-item p {
-    padding: 1rem;
-    background: var(--color-bg);
-    color: var(--color-text);
-    border-top: 1px solid var(--color-muted);
-    margin: 0;
-    line-height: 1.6;
-    }
+  
+  .beñango-item summary {
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 1.1rem;
+   padding: 1rem;
+   background: var(--color-secondary-btn);
+   color: var(--color-text);
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  
+  .beñango-item summary::marker,
+  .beñango-item summary::-webkit-details-marker {
+   display: none;
+  }
+  
+  .beñango-item[open] summary {
+   background: var(--color-secondary-hover);
+  }
+  
+  .beñango-item p {
+   padding: 1rem;
+   background: var(--color-bg);
+   color: var(--color-text);
+   border-top: 1px solid var(--color-muted);
+   margin: 0;
+   line-height: 1.6;
   }
   
   
